@@ -1,5 +1,7 @@
 # @gui-chat-plugin/weather
 
+[![npm version](https://badge.fury.io/js/%40gui-chat-plugin%2Fweather.svg)](https://www.npmjs.com/package/@gui-chat-plugin/weather)
+
 Weather forecast plugin for GUI Chat applications. Fetches weather data from Japan Meteorological Agency (JMA) API.
 
 ## Features
@@ -79,6 +81,14 @@ yarn build
 # Lint
 yarn lint
 ```
+
+## Test Prompts
+
+Try these prompts to test the plugin:
+
+1. "What's the weather forecast for Tokyo?"
+2. "Show me the weather in Osaka"
+3. "Will it rain in Hokkaido this week?"
 
 ## License
 
