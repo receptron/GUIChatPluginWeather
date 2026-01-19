@@ -21,11 +21,16 @@ yarn add @gui-chat-plugin/weather
 ### Vue Integration
 
 ```typescript
-import { plugin } from "@gui-chat-plugin/weather/vue";
-import "@gui-chat-plugin/weather/style.css";
+// In src/tools/index.ts
+import WeatherPlugin from "@gui-chat-plugin/weather/vue";
 
-// Register the plugin with your GUI Chat application
-registerPlugin(plugin);
+const pluginList = [
+  // ... other plugins
+  WeatherPlugin,
+];
+
+// In src/main.ts
+import "@gui-chat-plugin/weather/style.css";
 ```
 
 ### Core-only Usage
