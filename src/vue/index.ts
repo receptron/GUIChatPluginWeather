@@ -1,3 +1,5 @@
+import "../style.css";
+
 import type { ToolPlugin } from "gui-chat-protocol/vue";
 import type { WeatherToolData, WeatherJsonData, WeatherArgs } from "../core/types";
 import { TOOL_DEFINITION, fetchWeather } from "../core/plugin";
