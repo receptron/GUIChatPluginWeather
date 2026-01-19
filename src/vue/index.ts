@@ -21,3 +21,5 @@ export const plugin: ToolPlugin<WeatherToolData, WeatherJsonData, WeatherArgs> =
 export { fetchWeather as executeWeather } from "../core/plugin";
 export * from "../core/types";
 export { TOOL_DEFINITION } from "../core/definition";
+
+export default { plugin };
