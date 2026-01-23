@@ -1,6 +1,6 @@
 {
   "name": "@gui-chat-plugin/weather",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Weather forecast plugin for GUI Chat - Japan Meteorological Agency",
   "type": "module",
   "main": "./dist/index.cjs",
