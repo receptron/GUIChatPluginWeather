@@ -15,8 +15,11 @@ Weather forecast plugin for GUI Chat applications. Fetches weather data from Jap
 ## Installation
 
 ```bash
-yarn add @gui-chat-plugin/weather
+yarn add @gui-chat-plugin/weather gui-chat-protocol
 ```
+
+> `gui-chat-protocol` is a peer dependency — install it alongside the plugin; the host application provides the runtime and this plugin only declares the compatible range.
+
 
 ## Usage
 
