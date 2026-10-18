@@ -14,10 +14,7 @@ const AREA_CODES: Record<string, string> = officesData.reduce(
   {} as Record<string, string>,
 );
 
-export const fetchWeather = async (
-  _context: ToolContext,
-  args: WeatherArgs,
-): Promise<WeatherResult> => {
+export const fetchWeather = async (_context: ToolContext, args: WeatherArgs): Promise<WeatherResult> => {
   const { areaCode } = args;
   const areaName = AREA_CODES[areaCode] || "Unknown";
 
@@ -26,24 +23,20 @@ export const fetchWeather = async (
     const response = await fetch(url);
 
     if (!response.ok) {
-      throw new Error(
-        `JMA API error: ${response.status} ${response.statusText}`,
-      );
+      throw new Error(`JMA API error: ${response.status} ${response.statusText}`);
     }
 
     const data = await response.json();
 
     // JMA API returns an array of forecast data
     // Typically the first element contains the main forecast
-    const forecastData =
-      Array.isArray(data) && data.length > 0 ? data[0] : null;
+    const forecastData = Array.isArray(data) && data.length > 0 ? data[0] : null;
 
     if (!forecastData) {
       return {
         message: `No weather data available for ${areaName}`,
         title: `Weather - ${areaName}`,
-        instructions:
-          "Acknowledge that no weather data is available for the requested area.",
+        instructions: "Acknowledge that no weather data is available for the requested area.",
         data: {
           areaCode,
           areaName,
@@ -69,8 +62,7 @@ export const fetchWeather = async (
     return {
       message: `Failed to fetch weather for ${areaName}: ${error instanceof Error ? error.message : "Unknown error"}`,
       title: `Weather - ${areaName}`,
-      instructions:
-        "Acknowledge that the weather data fetch failed and suggest trying again.",
+      instructions: "Acknowledge that the weather data fetch failed and suggest trying again.",
       data: {
         areaCode,
         areaName,
