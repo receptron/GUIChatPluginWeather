@@ -30,54 +30,24 @@
       </g>
 
       <!-- Max temperature line -->
-      <polyline
-        v-if="maxPoints.length > 0"
-        :points="maxPoints"
-        fill="none"
-        stroke="#ef4444"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
+      <polyline v-if="maxPoints.length > 0" :points="maxPoints" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
 
       <!-- Max temperature points and labels -->
       <g v-if="maxPoints.length > 0">
         <g v-for="(point, i) in maxPointsArray" :key="`max-point-${i}`">
           <circle :cx="point.x" :cy="point.y" r="5" fill="#ef4444" />
-          <text
-            :x="point.x"
-            :y="point.y - 12"
-            text-anchor="middle"
-            class="text-sm font-bold fill-red-600"
-          >
-            {{ point.value }}°
-          </text>
+          <text :x="point.x" :y="point.y - 12" text-anchor="middle" class="text-sm font-bold fill-red-600">{{ point.value }}°</text>
         </g>
       </g>
 
       <!-- Min temperature line -->
-      <polyline
-        v-if="minPoints.length > 0"
-        :points="minPoints"
-        fill="none"
-        stroke="#3b82f6"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
+      <polyline v-if="minPoints.length > 0" :points="minPoints" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
 
       <!-- Min temperature points and labels -->
       <g v-if="minPoints.length > 0">
         <g v-for="(point, i) in minPointsArray" :key="`min-point-${i}`">
           <circle :cx="point.x" :cy="point.y" r="5" fill="#3b82f6" />
-          <text
-            :x="point.x"
-            :y="point.y + 20"
-            text-anchor="middle"
-            class="text-sm font-bold fill-blue-600"
-          >
-            {{ point.value }}°
-          </text>
+          <text :x="point.x" :y="point.y + 20" text-anchor="middle" class="text-sm font-bold fill-blue-600">{{ point.value }}°</text>
         </g>
       </g>
 
@@ -153,12 +123,9 @@ const chartHeight = computed(() => height - padding.top - padding.bottom);
 // Get all temperature values
 const allTemps = computed(() => {
   const temps: number[] = [];
-  if (props.tempsMax)
-    temps.push(...props.tempsMax.map(Number).filter((n) => !isNaN(n)));
-  if (props.tempsMin)
-    temps.push(...props.tempsMin.map(Number).filter((n) => !isNaN(n)));
-  if (props.temps)
-    temps.push(...props.temps.map(Number).filter((n) => !isNaN(n)));
+  if (props.tempsMax) temps.push(...props.tempsMax.map(Number).filter((n) => !isNaN(n)));
+  if (props.tempsMin) temps.push(...props.tempsMin.map(Number).filter((n) => !isNaN(n)));
+  if (props.temps) temps.push(...props.temps.map(Number).filter((n) => !isNaN(n)));
   return temps;
 });
 
