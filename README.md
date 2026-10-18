@@ -1,6 +1,7 @@
 # @gui-chat-plugin/weather
 
 [![npm version](https://badge.fury.io/js/%40gui-chat-plugin%2Fweather.svg)](https://www.npmjs.com/package/@gui-chat-plugin/weather)
+[![scoria](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/receptron/GUIChatPluginWeather/badges/scoria.json)](https://github.com/receptron/GUIChatPluginWeather/actions/workflows/scoria.yml)
 
 Weather forecast plugin for GUI Chat applications. Fetches weather data from Japan Meteorological Agency (JMA) API.
 
